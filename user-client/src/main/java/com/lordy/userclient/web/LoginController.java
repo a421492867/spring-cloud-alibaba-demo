@@ -1,6 +1,6 @@
 package com.lordy.userclient.web;
 
-import com.lordy.commons.entity.Response;
+import com.lordy.commons.web.api.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.oauth2.OAuth2ClientProperties;

@@ -1,6 +1,6 @@
 package com.lordy.userclient.web;
 
-import com.lordy.commons.entity.Response;
+import com.lordy.commons.web.api.Response;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
