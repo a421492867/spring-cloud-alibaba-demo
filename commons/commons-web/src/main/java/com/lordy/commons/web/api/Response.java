@@ -24,7 +24,7 @@ public class Response {
         return new Response(200, "", data);
     }
 
-    public Response(Integer code, String message, Object data) {
+    private Response(Integer code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;
