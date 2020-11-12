@@ -24,6 +24,7 @@
     <modules>
         <module>uaa</module>
         <module>commons</module>
+        <module>user-client</module>
     </modules>
 
     <properties>

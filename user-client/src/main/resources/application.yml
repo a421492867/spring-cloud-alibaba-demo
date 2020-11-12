@@ -1,0 +1,45 @@
+
+server:
+  port: 9001
+
+security:
+  oauth2:
+    client:
+      client-id: user-client
+      client-secret: user-client
+    resource:
+      token-info-uri: http://127.0.0.1:9999/oauth/check_token
+    access-token-uri: http://127.0.0.1:9999/oauth/token
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/oauth2?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: user-client
+  main:
+    allow-bean-definition-overriding: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+  global-config:
+    id-type: 0
+    capital-mode: true
+    db-column-underline: true
+    field-strategy: 1
+    logic-delete-value: 1
+    logic-not-delete-value: 0
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.lordy.userclient.entity
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  pageSizeZero: true
+  params:
+    count:
+      countSql
