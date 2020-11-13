@@ -4,17 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>demo</artifactId>
+        <artifactId>user</artifactId>
         <groupId>com.lordy</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.lordy</groupId>
-    <artifactId>commons</artifactId>
+    <artifactId>user-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>commons</name>
-    <packaging>pom</packaging>
+    <name>user-api</name>
+    <packaging>jar</packaging>
 
 
     <licenses>
@@ -32,9 +32,12 @@
         </developer>
     </developers>
 
-    <modules>
-        <module>commons-web</module>
-        <module>commons-database</module>
-    </modules>
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>com.lordy</groupId>-->
+<!--            <artifactId>commons-database</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
 </project>
