@@ -32,6 +32,14 @@
         </developer>
     </developers>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.lordy</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
+
 
 
 </project>
