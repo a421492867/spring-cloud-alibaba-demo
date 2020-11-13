@@ -74,11 +74,6 @@
                 <version>${mysql.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${htppclient-version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -106,12 +101,6 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson-version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>commons-httpclient</groupId>
-                <artifactId>commons-httpclient</artifactId>
-                <version>${commons-httpclient-version}</version>
             </dependency>
 
             <dependency>
