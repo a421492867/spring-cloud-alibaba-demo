@@ -41,7 +41,13 @@
 
         <dependency>
             <groupId>com.lordy</groupId>
-            <artifactId>commons</artifactId>
+            <artifactId>commons-web</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.lordy</groupId>
+            <artifactId>commons-database</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
@@ -71,16 +77,6 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>tomcat-jdbc</artifactId>
-                    <groupId>org.apache.tomcat</groupId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
