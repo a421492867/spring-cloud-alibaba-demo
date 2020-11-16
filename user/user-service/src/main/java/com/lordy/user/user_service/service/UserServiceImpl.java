@@ -11,9 +11,7 @@ import com.lordy.user.user_api.entity.UserRole;
 import com.lordy.user.user_service.mapper.UserMapper;
 import com.lordy.user.user_service.mapper.UserRoleMapper;
 import org.apache.dubbo.config.annotation.Service;
-import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.Transactional;
-import sun.security.provider.MD5;
 
 import javax.annotation.Resource;
 import java.util.Date;
