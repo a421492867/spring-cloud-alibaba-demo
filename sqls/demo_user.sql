@@ -11,11 +11,26 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 16/11/2020 09:37:10
+ Date: 16/11/2020 16:30:18
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for avatar
+-- ----------------------------
+DROP TABLE IF EXISTS `avatar`;
+CREATE TABLE `avatar` (
+  `id` int(64) NOT NULL AUTO_INCREMENT,
+  `img` blob,
+  `create_time` varchar(255) DEFAULT NULL,
+  `create_by` varchar(255) DEFAULT NULL,
+  `update_time` varchar(255) DEFAULT NULL,
+  `update_by` varchar(255) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for role
@@ -40,7 +55,7 @@ CREATE TABLE `user` (
   `username` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `nick_name` varchar(255) DEFAULT NULL,
-  `avatar` blob,
+  `avatar_id` int(64) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `gender` char(1) DEFAULT NULL,
