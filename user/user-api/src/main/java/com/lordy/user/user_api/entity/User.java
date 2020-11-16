@@ -8,7 +8,7 @@ import com.lordy.commons.database.entity.BaseEntity;
 @TableName("user")
 public class User extends BaseEntity {
 
-    @TableId
+    @TableField
     private String username;
 
     @TableField
@@ -18,7 +18,7 @@ public class User extends BaseEntity {
     private String nickName;
 
     @TableField
-    private byte[] avatar;
+    private Integer avatarId;
 
     @TableField
     private String email;
@@ -53,12 +53,12 @@ public class User extends BaseEntity {
         this.nickName = nickName;
     }
 
-    public byte[] getAvatar() {
-        return avatar;
+    public Integer getAvatarId() {
+        return avatarId;
     }
 
-    public void setAvatar(byte[] avatar) {
-        this.avatar = avatar;
+    public void setAvatarId(Integer avatarId) {
+        this.avatarId = avatarId;
     }
 
     public String getEmail() {
