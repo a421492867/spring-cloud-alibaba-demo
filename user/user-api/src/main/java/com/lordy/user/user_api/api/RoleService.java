@@ -1,6 +1,5 @@
 package com.lordy.user.user_api.api;
 
-import com.lordy.commons.web.api.Response;
 import com.lordy.commons.web.api.SearchDto;
 import com.lordy.user.user_api.entity.Role;
 

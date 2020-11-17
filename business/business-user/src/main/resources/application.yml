@@ -1,0 +1,24 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: business-user
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  consumer:
+    check: false
+  registry:
+    address: nacos://127.0.0.1:8848
+  cloud:
+    subscribed-services: user-service
+  protocol:
+    port: -1
+    name: dubbo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
