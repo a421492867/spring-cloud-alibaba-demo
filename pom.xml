@@ -35,6 +35,7 @@
         <module>commons</module>
         <module>uaa</module>
         <module>user</module>
+        <module>business</module>
     </modules>
 
     <properties>

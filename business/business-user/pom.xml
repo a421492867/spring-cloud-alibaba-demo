@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>user</artifactId>
+        <artifactId>business</artifactId>
         <groupId>com.lordy</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.lordy</groupId>
-    <artifactId>user-api</artifactId>
+    <artifactId>business-user</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>user-api</name>
+    <name>business-user</name>
     <packaging>jar</packaging>
 
 
@@ -32,7 +32,12 @@
         </developer>
     </developers>
 
-
-
+    <dependencies>
+        <dependency>
+            <groupId>com.lordy</groupId>
+            <artifactId>user-api</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

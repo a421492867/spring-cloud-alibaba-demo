@@ -43,4 +43,9 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
         //PageInfo pageInfo = new PageInfo(roleList);
         return roleList;
     }
+
+    @Override
+    public Role getOne(Integer id) {
+        return selectById(id);
+    }
 }

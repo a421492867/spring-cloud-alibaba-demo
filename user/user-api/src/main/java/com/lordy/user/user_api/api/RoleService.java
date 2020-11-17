@@ -13,4 +13,6 @@ public interface RoleService {
     boolean deleteRole(Integer id);
 
     List<Role> list(SearchDto searchDto);
+
+    Role getOne(Integer id);
 }
