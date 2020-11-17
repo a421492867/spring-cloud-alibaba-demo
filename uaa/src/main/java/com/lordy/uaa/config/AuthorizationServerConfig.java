@@ -1,6 +1,6 @@
 package com.lordy.uaa.config;
 
-import com.lordy.uaa.service.UserService;
+import com.lordy.uaa.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     @Autowired
-    private UserService userDetailService;
+    private UserDetailService userDetailService;
 
     @Autowired
     private AuthenticationManager authenticationManager;

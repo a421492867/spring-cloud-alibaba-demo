@@ -1,6 +1,6 @@
 package com.lordy.uaa.config;
 
-import com.lordy.uaa.service.UserService;
+import com.lordy.uaa.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     protected UserDetailsService userDetailsService() {
-        return new UserService();
+        return new UserDetailService();
     }
 
     @Bean

@@ -1,7 +1,7 @@
 package com.lordy.uaa.web;
 
 import com.lordy.commons.web.api.Response;
-import com.lordy.uaa.service.UserService;
+import com.lordy.uaa.service.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +14,7 @@ import java.security.Principal;
 public class UserController {
 
     @Autowired
-    private UserService userService;
+    private UserDetailService userDetailService;
 
     @GetMapping
     public Response currentUser(Principal principal){
