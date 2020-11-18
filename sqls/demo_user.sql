@@ -11,7 +11,7 @@
  Target Server Version : 50722
  File Encoding         : 65001
 
- Date: 16/11/2020 16:30:18
+ Date: 18/11/2020 11:21:55
 */
 
 SET NAMES utf8mb4;
@@ -63,7 +63,7 @@ CREATE TABLE `user` (
   `update_time` varchar(255) DEFAULT NULL,
   `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for user_role
@@ -73,7 +73,8 @@ CREATE TABLE `user_role` (
   `id` int(64) NOT NULL AUTO_INCREMENT,
   `user_id` int(64) DEFAULT NULL,
   `role_id` int(64) DEFAULT NULL,
+  `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 SET FOREIGN_KEY_CHECKS = 1;

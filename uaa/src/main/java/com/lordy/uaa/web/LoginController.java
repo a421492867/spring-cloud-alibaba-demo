@@ -28,7 +28,7 @@ public class LoginController {
         return Response.dataSuccess(username);
     }
 
-    @GetMapping
+    @GetMapping("/me")
     public Response currentUser(Principal principal){
         return Response.dataSuccess(principal);
     }
