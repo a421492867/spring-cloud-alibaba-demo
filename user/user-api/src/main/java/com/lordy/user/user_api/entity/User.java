@@ -29,6 +29,12 @@ public class User extends BaseEntity {
     @TableField
     private String gender;
 
+    @TableField
+    private String createTime;
+
+    @TableField
+    private String updateTime;
+
     public String getUsername() {
         return username;
     }
@@ -83,5 +89,21 @@ public class User extends BaseEntity {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }

@@ -1,8 +1,9 @@
 package com.lordy.user.user_api.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class UserDto {
+public class UserDto implements Serializable {
 
     private User user;
 

@@ -34,11 +34,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if(isExist(username)){
             return false;
         }
-
-        //todo 密码加密
-//        String password = user.getPassword();
-//        user.setPassword();
-
         user.setStatus(CommonConfig.IN_USE_STATUS);
         user.setCreateTime(CommonConfig.sdf.format(new Date()));
         insert(user);

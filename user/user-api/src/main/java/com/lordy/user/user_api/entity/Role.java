@@ -13,6 +13,12 @@ public class Role extends BaseEntity {
     @TableField
     private String remark;
 
+    @TableField
+    private String createTime;
+
+    @TableField
+    private String updateTime;
+
     public String getRoleName() {
         return roleName;
     }
@@ -27,5 +33,21 @@ public class Role extends BaseEntity {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(String updateTime) {
+        this.updateTime = updateTime;
     }
 }
