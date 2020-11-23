@@ -76,6 +76,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String[] authorities = new String[userRoleList.size()];
         for(int i = 0; i < userRoleList.size(); i++){
             Role role = roleMapper.selectById(userRoleList.get(i).getRoleId());
+            if(role == null){
+                continue;
+            }
             authorities[i] = role.getRoleName();
         }
 
