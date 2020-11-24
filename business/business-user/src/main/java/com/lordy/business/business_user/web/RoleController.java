@@ -14,7 +14,6 @@ public class RoleController {
     @Autowired
     private RoleBusinessService roleBusinessService;
 
-
     @PutMapping
     public Response add(@RequestBody Role role){
         return roleBusinessService.addRole(role);

@@ -72,7 +72,6 @@ public class LoginController {
 
     @GetMapping("/me")
     public Response currentUser(Principal principal){
-        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return Response.dataSuccess(principal);
 
     }
