@@ -1,6 +1,8 @@
 package com.lordy.commons.web.api;
 
-public class SearchDto {
+import java.io.Serializable;
+
+public class SearchDto implements Serializable {
 
     private Integer page;
 

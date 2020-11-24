@@ -1,20 +1,18 @@
 package com.lordy.uaa.web;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.lordy.commons.web.api.Response;
 import com.lordy.uaa.service.UserDetailService;
 import com.lordy.uaa.util.HttpUtil;
 import com.lordy.user.user_api.entity.RegisterDto;
-import com.lordy.user.user_api.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
@@ -44,6 +42,9 @@ public class LoginController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private TokenStore tokenStore;
+
 
     @PostMapping("/register")
     public Response register(@RequestBody RegisterDto registerDto){
@@ -70,10 +71,16 @@ public class LoginController {
         return Response.dataSuccess(JSON.parse(res));
     }
 
+    @PostMapping("logout")
+    public Response logout(@RequestParam("token") String token){
+        OAuth2AccessToken oAuth2AccessToken = tokenStore.readAccessToken(token);
+        tokenStore.removeAccessToken(oAuth2AccessToken);
+        return Response.success();
+    }
+
     @GetMapping("/me")
     public Response currentUser(Principal principal){
         return Response.dataSuccess(principal);
-
     }
 
 }

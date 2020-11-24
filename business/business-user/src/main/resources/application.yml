@@ -7,6 +7,16 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
+security:
+  oauth2:
+    client:
+      client-id: bussiness-user
+      client-secret: bussiness-user
+      access-token-uri: http://localhost:9001/oauth/token
+      user-authorization-uri: http://localhost:9001/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:9001/oauth/check_token
+
 dubbo:
   consumer:
     check: false
