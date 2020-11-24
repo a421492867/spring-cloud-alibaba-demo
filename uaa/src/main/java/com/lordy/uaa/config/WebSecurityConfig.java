@@ -3,6 +3,7 @@ package com.lordy.uaa.config;
 import com.lordy.uaa.service.UserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -10,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -44,13 +46,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder());
     }
 
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/user/login", "/user/register").permitAll()
+                //.antMatchers(HttpMethod.POST, "/user/login", "/user/register").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .httpBasic()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS) //无状态
+//                .and()
+//                .httpBasic()
                 .and()
                 .cors()
                 .and()
@@ -63,9 +69,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/error",
                 "/static/**",
                 "/v2/api-docs/**",
-                "/swagger-resources/**",
                 "/webjars/**",
-                "/favicon.ico"
+                "/favicon.ico",
+                "/user/login",
+                "/user/register"    //放在http.permitAll中不生效 依然被security管理  放在ignore中 后续尝试能否放入http中
         );
     }
 }

@@ -58,6 +58,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .tokenKeyAccess("isAuthenticated()")
                 .checkTokenAccess("isAuthenticated()");
     }
+    
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
