@@ -14,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.util.HashMap;
@@ -45,6 +46,10 @@ public class LoginController {
     @Autowired
     private TokenStore tokenStore;
 
+    @PostMapping("/upload_avatar")
+    public Response uploadAvatar(@RequestParam("file") MultipartFile file){
+        return userDetailService.uploadAvatar(file);
+    }
 
     @PostMapping("/register")
     public Response register(@RequestBody RegisterDto registerDto){

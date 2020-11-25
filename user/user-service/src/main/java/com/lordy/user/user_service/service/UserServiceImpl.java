@@ -86,10 +86,34 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         return userDto;
     }
 
+    @Override
+    public User getUserInfoByUsername(String username) {
+        Wrapper w = new EntityWrapper();
+        w.eq("username", username);
+        User user = selectOne(w);
+        return user;
+    }
+
     public boolean isExist(String username){
         Wrapper w = new EntityWrapper();
         w.eq("username", username);
         User user = selectOne(w);
         return user != null;
+    }
+
+    @Override
+    public boolean updateUserInfo(User user) {
+        return updateById(user);
+    }
+
+    @Override
+    public boolean modifyPassword(String old, String newPassword, String username) {
+        User user = getUserInfoByUsername(username);
+        String pass = user.getPassword();
+        if(pass.equals(old)){
+            user.setPassword(newPassword);
+            return updateById(user);
+        }
+        return false;
     }
 }

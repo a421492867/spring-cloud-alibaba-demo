@@ -45,4 +45,9 @@ public class AvatarServiceImpl extends ServiceImpl<AvatarMapper, Avatar> impleme
     public boolean deleteAvatar(Integer id) {
         return deleteById(id);
     }
+
+    @Override
+    public Avatar getAvatarById(Integer id) {
+        return selectById(id);
+    }
 }

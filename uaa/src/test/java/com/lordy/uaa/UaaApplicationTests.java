@@ -19,6 +19,13 @@ class UaaApplicationTests {
 	}
 
 	@Test
+	void testEncoder(){
+		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		String s = "123456";
+		System.out.println(passwordEncoder.encode(s));
+	}
+
+	@Test
 	void generateRegister(){
 		RegisterDto registerDto = new RegisterDto();
 		User user = new User();
