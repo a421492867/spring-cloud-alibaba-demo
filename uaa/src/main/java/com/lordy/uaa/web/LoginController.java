@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/user")
+//@RequestMapping("/user")
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());

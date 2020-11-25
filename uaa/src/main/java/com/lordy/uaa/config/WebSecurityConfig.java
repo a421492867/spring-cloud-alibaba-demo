@@ -71,8 +71,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/v2/api-docs/**",
                 "/webjars/**",
                 "/favicon.ico",
-                "/user/login",
-                "/user/register"    //放在http.permitAll中不生效 依然被security管理  放在ignore中 后续尝试能否放入http中
+                "/login",
+                "/register"    //放在http.permitAll中不生效 依然被security管理  放在ignore中 后续尝试能否放入http中
         );
     }
 }
