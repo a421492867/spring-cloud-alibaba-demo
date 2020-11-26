@@ -24,6 +24,14 @@ mybatis-plus:
     logic-not-delete-value: 0
   mapper-locations: classpath:/mapper/*Mapper.xml
   type-aliases-package: com.lordy.user.user_api.entity
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  pageSizeZero: true
+  params:
+    count:
+      countSql
 dubbo:
   consumer:
     check: false

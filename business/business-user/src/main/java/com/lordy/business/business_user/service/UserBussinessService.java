@@ -1,14 +1,14 @@
 package com.lordy.business.business_user.service;
 
+import com.github.pagehelper.PageInfo;
 import com.lordy.commons.web.api.Response;
+import com.lordy.commons.web.api.SearchDto;
 import com.lordy.user.user_api.api.AvatarService;
 import com.lordy.user.user_api.api.UserService;
 import com.lordy.user.user_api.entity.Avatar;
 import com.lordy.user.user_api.entity.User;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -77,6 +77,11 @@ public class UserBussinessService {
             return Response.dataSuccess(INITIAL_PASSWORD);
         }
         return Response.error();
+    }
+
+    public Response list(SearchDto searchDto){
+        PageInfo pageInfo = userService.list(searchDto);
+        return Response.dataSuccess(pageInfo);
     }
 
 

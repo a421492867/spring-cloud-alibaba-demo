@@ -3,7 +3,10 @@ package com.lordy.user.user_service.service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lordy.commons.database.config.CommonConfig;
+import com.lordy.commons.web.api.SearchDto;
 import com.lordy.user.user_api.api.UserService;
 import com.lordy.user.user_api.entity.*;
 import com.lordy.user.user_service.mapper.RoleMapper;
@@ -115,5 +118,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return updateById(user);
         }
         return false;
+    }
+
+    @Override
+    public PageInfo<User> list(SearchDto searchDto) {
+        PageHelper.startPage(searchDto.getPage(), searchDto.getSize());
+        Wrapper wrapper = new EntityWrapper();
+        wrapper.eq("status", "1");
+        if(searchDto.getUsername() != null && !"".equals(searchDto.getUsername())){
+            wrapper.like("username", searchDto.getUsername());
+        }
+        List<User> users = selectList(wrapper);
+        PageInfo<User> pageInfo = new PageInfo(users);
+        return pageInfo;
     }
 }

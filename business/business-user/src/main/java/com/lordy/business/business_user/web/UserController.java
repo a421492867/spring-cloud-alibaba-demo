@@ -2,6 +2,7 @@ package com.lordy.business.business_user.web;
 
 import com.lordy.business.business_user.service.UserBussinessService;
 import com.lordy.commons.web.api.Response;
+import com.lordy.commons.web.api.SearchDto;
 import com.lordy.user.user_api.entity.Avatar;
 import com.lordy.user.user_api.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +70,12 @@ public class UserController {
     @PostMapping("reset_password/{username}")
     public Response resetPassword(@PathVariable String username){
         return userBussinessService.resetPassword(username);
+    }
+
+    @PreAuthorize("hasAuthority('admin')")
+    @PostMapping("list")
+    public Response list(@RequestBody SearchDto searchDto){
+        return userBussinessService.list(searchDto);
     }
 
 

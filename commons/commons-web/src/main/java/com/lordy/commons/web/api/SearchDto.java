@@ -10,6 +10,8 @@ public class SearchDto implements Serializable {
 
     private String roleName;
 
+    private String username;
+
     public Integer getPage() {
         return page;
     }
@@ -32,5 +34,13 @@ public class SearchDto implements Serializable {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
