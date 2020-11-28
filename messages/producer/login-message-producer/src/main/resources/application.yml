@@ -1,0 +1,39 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: login-log-producer
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: localhost:9876
+      bindings:
+        login-log-topic: {destination: login-log-topic, content-type: application/json}
+
+security:
+  oauth2:
+    client:
+      client-id: login-message
+      client-secret: login-message
+      access-token-uri: http://localhost:9001/oauth/token
+      user-authorization-uri: http://localhost:9001/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:9001/oauth/check_token
+
+dubbo:
+  consumer:
+    check: false
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    port: -1
+    name: dubbo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

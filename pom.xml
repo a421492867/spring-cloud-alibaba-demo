@@ -35,8 +35,10 @@
         <module>commons</module>
         <module>uaa</module>
         <module>user</module>
+        <module>log</module>
         <module>shop</module>
         <module>business</module>
+        <module>messages</module>
     </modules>
 
     <properties>

@@ -114,6 +114,7 @@
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

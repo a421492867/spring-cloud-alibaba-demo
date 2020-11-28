@@ -14,7 +14,7 @@ class UaaApplicationTests {
 	@Test
 	void contextLoads() {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		String s = passwordEncoder.encode("bussiness-user");
+		String s = passwordEncoder.encode("login-message");
 		System.out.println(s);
 	}
 
