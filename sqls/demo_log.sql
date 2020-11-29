@@ -11,7 +11,7 @@
  Target Server Version : 50717
  File Encoding         : utf-8
 
- Date: 11/28/2020 20:34:35 PM
+ Date: 11/29/2020 17:47:45 PM
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,6 @@ CREATE TABLE `login_log` (
   `user_id` int(64) DEFAULT NULL,
   `create_time` varchar(255) DEFAULT NULL,
   `ip` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
   `user_agent` varchar(255) DEFAULT NULL,
   `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
