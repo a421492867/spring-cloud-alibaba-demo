@@ -16,8 +16,6 @@ public class LoginLog extends BaseEntity {
     @TableField
     private String ip;
 
-    @TableField
-    private String address;
 
     @TableField
     private String userAgent;
@@ -44,14 +42,6 @@ public class LoginLog extends BaseEntity {
 
     public void setIp(String ip) {
         this.ip = ip;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getUserAgent() {

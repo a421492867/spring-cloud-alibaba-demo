@@ -28,7 +28,19 @@
 		<dependency>
 			<groupId>com.lordy</groupId>
 			<artifactId>user-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.lordy</groupId>
+			<artifactId>login-producer-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>eu.bitwalker</groupId>
+			<artifactId>UserAgentUtils</artifactId>
+			<version>1.21</version>
 		</dependency>
 
 		<dependency>

@@ -14,15 +14,15 @@ spring:
       bindings:
         login-log-topic: {destination: login-log-topic, content-type: application/json}
 
-security:
-  oauth2:
-    client:
-      client-id: login-message
-      client-secret: login-message
-      access-token-uri: http://localhost:9001/oauth/token
-      user-authorization-uri: http://localhost:9001/oauth/authorize
-    resource:
-      token-info-uri: http://localhost:9001/oauth/check_token
+#security:
+#  oauth2:
+#    client:
+#      client-id: login-message
+#      client-secret: login-message
+#      access-token-uri: http://localhost:9001/oauth/token
+#      user-authorization-uri: http://localhost:9001/oauth/authorize
+#    resource:
+#      token-info-uri: http://localhost:9001/oauth/check_token
 
 dubbo:
   consumer:
@@ -32,6 +32,8 @@ dubbo:
   protocol:
     port: -1
     name: dubbo
+  scan:
+    base-packages: com.lordy.login_producer.producer
 management:
   endpoints:
     web:

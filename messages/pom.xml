@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>producer-api</module>
         <module>producer</module>
         <module>consumer</module>
     </modules>

@@ -16,6 +16,7 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.HashMap;
 import java.util.Map;
@@ -57,7 +58,7 @@ public class LoginController {
     }
 
     @PostMapping("login")
-    public Response login(@RequestParam String username, @RequestParam String password){
+    public Response login(@RequestParam String username, @RequestParam String password, HttpServletRequest request){
         UserDetails userDetails = userDetailService.loadUserByUsername(username);
         if(userDetails == null){
             return new Response(500, "用户不存在", null);
@@ -73,6 +74,7 @@ public class LoginController {
         params.put("client_secret", clientSecret);
         String res = HttpUtil.doPost(URL_OAUTH_TOKEN, params, "utf8", true);
         logger.info(res);
+        userDetailService.sendLoginLog(username, request);
         return Response.dataSuccess(JSON.parse(res));
     }
 
@@ -87,5 +89,8 @@ public class LoginController {
     public Response currentUser(Principal principal){
         return Response.dataSuccess(principal);
     }
+
+
+
 
 }

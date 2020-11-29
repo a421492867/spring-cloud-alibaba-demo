@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>producer</artifactId>
+        <artifactId>producer-api</artifactId>
         <groupId>com.lordy</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.lordy</groupId>
-    <artifactId>login-message-producer</artifactId>
+    <artifactId>login-producer-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>login-message-producer</name>
+    <name>login-producer-api</name>
     <packaging>jar</packaging>
 
     <licenses>
@@ -35,11 +35,6 @@
         <dependency>
             <groupId>com.lordy</groupId>
             <artifactId>log-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.lordy</groupId>
-            <artifactId>login-producer-api</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>

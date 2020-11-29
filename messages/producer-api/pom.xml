@@ -4,17 +4,21 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>producer</artifactId>
+        <artifactId>messages</artifactId>
         <groupId>com.lordy</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <groupId>com.lordy</groupId>
-    <artifactId>login-message-producer</artifactId>
+    <artifactId>producer-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>login-message-producer</name>
-    <packaging>jar</packaging>
+    <name>producer-api</name>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>login-producer-api</module>
+    </modules>
 
     <licenses>
         <license>
@@ -30,18 +34,7 @@
             <email>speng.y@foxmail.com</email>
         </developer>
     </developers>
-
     <dependencies>
-        <dependency>
-            <groupId>com.lordy</groupId>
-            <artifactId>log-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.lordy</groupId>
-            <artifactId>login-producer-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 
+    </dependencies>
 </project>
