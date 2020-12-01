@@ -26,25 +26,21 @@ public class UserController {
         return userBussinessService.deleteUser(id);
     }
 
-    //@PreAuthorize("hasAuthority('admin') or hasAuthority('user')")
     @PostMapping("update_avatar")
     public Response updateAvatar(@RequestParam("file") MultipartFile file, @RequestParam("avatarId") int avatarId){
         return userBussinessService.updateAvatar(file, avatarId);
     }
 
-    //@PreAuthorize("hasAuthority('admin') or hasAuthority('user')")
     @PostMapping("update_info")
     public Response updateInfo(@RequestBody User user){
         return userBussinessService.updateUserInfo(user);
     }
 
-    //@PreAuthorize("hasAuthority('admin') or hasAuthority('user')")
     @GetMapping("{username}")
     public Response myInfo(@PathVariable String username){
         return userBussinessService.info(username);
     }
 
-    //@PreAuthorize("hasAuthority('admin') or hasAuthority('user')")
     @GetMapping("avatar/{avatarId}")
     public void myAvatar(@PathVariable Integer avatarId, HttpServletResponse response) throws Exception{
         if(avatarId == null){
@@ -60,7 +56,6 @@ public class UserController {
         outputStream.close();
     }
 
-    //@PreAuthorize("hasAuthority('admin') or hasAuthority('user')")
     @PostMapping("modify_password")
     public Response modifyPassword(@RequestParam("old_pass") String old, @RequestParam("new_pass") String newPass, @RequestParam("username") String username){
         return userBussinessService.modifyPassword(old, newPass, username);
