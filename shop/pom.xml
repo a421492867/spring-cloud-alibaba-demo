@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>shop-api</module>
     </modules>
 
 
