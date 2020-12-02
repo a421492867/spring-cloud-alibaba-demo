@@ -18,6 +18,7 @@
 
     <modules>
         <module>business-user</module>
+        <module>business-shop</module>
     </modules>
 
 

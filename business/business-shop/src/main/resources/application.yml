@@ -1,0 +1,34 @@
+server:
+  port: 9101
+
+spring:
+  application:
+    name: business-shop
+  main:
+    allow-bean-definition-overriding: true
+
+security:
+  oauth2:
+    client:
+      client-id: bussiness-shop
+      client-secret: bussiness-shop
+      access-token-uri: http://localhost:9001/oauth/token
+      user-authorization-uri: http://localhost:9001/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:9001/oauth/check_token
+
+dubbo:
+  consumer:
+    check: false
+  registry:
+    address: nacos://127.0.0.1:8848
+  cloud:
+    subscribed-services: shop-service
+  protocol:
+    port: -1
+    name: dubbo
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

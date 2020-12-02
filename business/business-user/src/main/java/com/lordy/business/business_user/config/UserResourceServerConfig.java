@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 @EnableResourceServer
 //使@PreAuthorize生效
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-public class UserResouceServerConfig extends ResourceServerConfigurerAdapter {
+public class UserResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
