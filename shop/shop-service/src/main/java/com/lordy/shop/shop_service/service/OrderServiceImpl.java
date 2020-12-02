@@ -10,4 +10,10 @@ import org.apache.dubbo.config.annotation.Service;
 @Service
 public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements OrderService {
 
+
+    @Override
+    public Integer insertOrder(Order order) {
+        insert(order);
+        return order.getId();
+    }
 }

@@ -132,4 +132,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         PageInfo<User> pageInfo = new PageInfo(users);
         return pageInfo;
     }
+
+    @Override
+    public User selectUserById(Integer id) {
+        if(id == null){
+            return null;
+        }
+        return selectById(id);
+    }
 }

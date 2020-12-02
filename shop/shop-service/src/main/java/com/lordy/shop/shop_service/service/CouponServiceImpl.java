@@ -8,4 +8,11 @@ import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class CouponServiceImpl extends ServiceImpl<CouponMapper, Coupon> implements CouponService {
+    @Override
+    public Coupon selectById(Integer id) {
+        if(id == null){
+            return null;
+        }
+        return selectById(id);
+    }
 }

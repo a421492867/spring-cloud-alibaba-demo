@@ -5,5 +5,5 @@ import com.lordy.shop.shop_api.entity.Order;
 
 public interface OrderService {
 
-    Response confirmOrder(Order order);
+    Integer insertOrder(Order order);
 }

@@ -8,4 +8,11 @@ import org.apache.dubbo.config.annotation.Service;
 
 @Service
 public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements GoodsService {
+    @Override
+    public Goods findGoodById(Integer id) {
+        if(id == null){
+            return null;
+        }
+        return selectById(id);
+    }
 }

@@ -21,4 +21,6 @@ public interface UserService {
     boolean modifyPassword(String old, String newPassword, String username);
 
     PageInfo<User> list(SearchDto searchDto);
+
+    User selectUserById(Integer id);
 }
