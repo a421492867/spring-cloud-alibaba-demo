@@ -36,59 +36,10 @@ public class OrderBusinessService {
 
     public Response confirmOrder(Order order){
         try {
-            checkOrder(order);
         }catch (Exception e){
 
         }
         return null;
-    }
-
-    private Integer savePreOrder(Order order) throws Exception{
-        order.setOrderStatus("0");
-        double totalGoodsPrice = order.getGoodPrice() * order.getGoodNum();
-        if(order.getGoodAmount() != totalGoodsPrice){
-            throw new Exception("订单价格不正确");
-        }
-        Integer couponId = order.getCouponId();
-        if(couponId != null){
-            Coupon coupon = couponService.selectById(couponId);
-            if(coupon == null){
-                throw new Exception("没有该优惠券");
-            }
-            if("1".equals(coupon.getIsUsed())){
-                throw new Exception("优惠券已被使用");
-            }
-        }else {
-            order.setCouponPaid(0);
-        }
-        double total = order.getOrderAmount() - order.getCouponPaid();
-        order.setPayAmount(total);
-        order.setCreateTime(CommonConfig.sdf.format(new Date()));
-        Integer id = orderService.insertOrder(order);
-        return id;
-
-    }
-
-
-    private void checkOrder(Order order) throws Exception {
-        if(order == null){
-            throw new Exception("订单不能为空");
-        }
-        Goods goods = goodsService.findGoodById(order.getGoodId());
-        if(goods == null){
-            throw new Exception("没有此商品");
-        }
-        User user = userService.selectUserById(order.getUserId());
-        if(user == null){
-            throw new Exception("没有此用户");
-        }
-        if(order.getGoodPrice() != goods.getPrice()){
-            throw new Exception("订单价格 不正确");
-        }
-        if(order.getGoodNum() > goods.getStock()){
-            throw new Exception("商品库存不足");
-        }
-        logger.info("校验订单通过");
     }
 
 

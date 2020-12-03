@@ -10,50 +10,40 @@ public class Order extends BaseEntity {
     @TableField
     private Integer userId;
 
+    //订单状态
     @TableField
     private String orderStatus;
 
+    //支付状态
     @TableField
     private String payStatus;
 
     @TableField
-    private String shippingStatus;
-
-    @TableField
-    private String address;
-
-    @TableField
-    private String consigee;
-
-    @TableField
     private Integer goodId;
 
+    //商品量
     @TableField
     private Integer goodNum;
 
+    //商品单价
     @TableField
     private double goodPrice;
 
+    //订单总金额
     @TableField
-    private double goodAmount;
+    private double orderTotal;
 
-    @TableField
-    private double shippingFee;
-
-    @TableField
-    private double orderAmount;
 
     @TableField
     private Integer couponId;
 
+    //优惠券金额
     @TableField
     private double couponPaid;
 
+    //用户付钱的金额
     @TableField
     private double moneyPaid;
-
-    @TableField
-    private double payAmount;
 
     @TableField
     private String createTime;
@@ -88,30 +78,6 @@ public class Order extends BaseEntity {
         this.payStatus = payStatus;
     }
 
-    public String getShippingStatus() {
-        return shippingStatus;
-    }
-
-    public void setShippingStatus(String shippingStatus) {
-        this.shippingStatus = shippingStatus;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getConsigee() {
-        return consigee;
-    }
-
-    public void setConsigee(String consigee) {
-        this.consigee = consigee;
-    }
-
     public Integer getGoodId() {
         return goodId;
     }
@@ -136,28 +102,12 @@ public class Order extends BaseEntity {
         this.goodPrice = goodPrice;
     }
 
-    public double getGoodAmount() {
-        return goodAmount;
+    public double getOrderTotal() {
+        return orderTotal;
     }
 
-    public void setGoodAmount(double goodAmount) {
-        this.goodAmount = goodAmount;
-    }
-
-    public double getShippingFee() {
-        return shippingFee;
-    }
-
-    public void setShippingFee(double shippingFee) {
-        this.shippingFee = shippingFee;
-    }
-
-    public double getOrderAmount() {
-        return orderAmount;
-    }
-
-    public void setOrderAmount(double orderAmount) {
-        this.orderAmount = orderAmount;
+    public void setOrderTotal(double orderTotal) {
+        this.orderTotal = orderTotal;
     }
 
     public Integer getCouponId() {
@@ -182,14 +132,6 @@ public class Order extends BaseEntity {
 
     public void setMoneyPaid(double moneyPaid) {
         this.moneyPaid = moneyPaid;
-    }
-
-    public double getPayAmount() {
-        return payAmount;
-    }
-
-    public void setPayAmount(double payAmount) {
-        this.payAmount = payAmount;
     }
 
     public String getCreateTime() {
