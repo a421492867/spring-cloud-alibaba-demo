@@ -34,12 +34,39 @@ public class OrderBusinessService {
     @Reference
     private CouponService couponService;
 
-    public Response confirmOrder(Order order){
-        try {
-        }catch (Exception e){
-
+    public Response confirmOrder(Order order) throws Exception{
+        if(!checkOrder(order)){
+            throw new Exception("订单不合法");
         }
         return null;
+    }
+
+
+    private boolean checkOrder(Order order){
+        if(order == null){
+            return false;
+        }
+        Integer userId = order.getUserId();
+        User user = userService.selectUserById(userId);
+        if(user == null){
+            return false;
+        }
+        Integer goodId = order.getGoodId();
+        Goods goods = goodsService.findGoodById(goodId);
+        if(goods == null){
+            return false;
+        }
+        if(goods.getPrice() != order.getGoodPrice()){
+            return false;
+        }
+        if(order.getGoodNum() < goods.getStock()){
+            return false;
+        }
+        double orderTotal = order.getOrderTotal();
+        if(orderTotal != goods.getPrice() * order.getGoodNum()){
+            return false;
+        }
+        return true;
     }
 
 
