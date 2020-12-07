@@ -66,7 +66,6 @@ public class OrderBusinessService {
     }
 
     public void reduceGoodNum(Order order) throws Exception{
-        //todo Log记录
         boolean result = goodsService.reduceGoodNum(order);
         if(!result){
             throw new Exception("扣减库存失败");

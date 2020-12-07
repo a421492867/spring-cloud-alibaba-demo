@@ -24,6 +24,7 @@ public class CouponServiceImpl extends ServiceImpl<CouponMapper, Coupon> impleme
 
     @Override
     public boolean useCoupon(Order order) {
+        //todo log记录
         Coupon coupon = selectById(order.getCouponId());
         coupon.setIsUsed("1");
         return updateById(coupon);
