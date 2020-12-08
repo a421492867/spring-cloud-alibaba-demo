@@ -34,8 +34,8 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods> implements
     public boolean reduceGoodNum(Order order) {
         // redission lock
         RLock lock = redissonClient.getLock("lock");
-        lock.lock(15, TimeUnit.SECONDS);
         try {
+            lock.lock(15, TimeUnit.SECONDS);
             Integer goodId = order.getGoodId();
             Goods goods = findGoodById(goodId);
             if(goods.getStock() < order.getGoodNum()){
